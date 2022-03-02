@@ -13,6 +13,11 @@
 
 Nginx раздает статический фронт и проксирует запросы к апи в контейнер с бэком.
 
+```bash
+git clone https://github.com/smart5678/devops_internship_docker.git
+cd devops_internship_docker
+```
+
 docker-compose запускается из папки infra:
 ```bash
 sudo docker-compose -f infra/docker-compose.yml up
