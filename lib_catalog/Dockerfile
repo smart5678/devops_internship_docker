@@ -10,8 +10,4 @@ RUN pip3 install -r requirements.txt
 
 COPY . .
 
-#RUN python3 manage.py collectstatic --noinput
-
-#RUN python3 manage.py migrate
-
-CMD sleep 5 && python3 manage.py migrate && gunicorn lib_catalog.wsgi:application --bind 0.0.0.0:8000
+CMD sleep 5 && python3 manage.py migrate && python3 manage.py loaddata catalog/fixtures/bbk_data.json && gunicorn lib_catalog.wsgi:application --bind 0.0.0.0:8000
